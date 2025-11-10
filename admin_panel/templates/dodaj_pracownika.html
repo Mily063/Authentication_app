@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dodaj Pracownika</h2>
+<form method="post" enctype="multipart/form-data">
+  Imię: <input type="text" name="imie" required><br>
+  Nazwisko: <input type="text" name="nazwisko" required><br>
+  Wizerunek (zdjęcie): <input type="file" name="wizerunek" accept="image/*" required><br>
+  <input type="submit" value="Dodaj">
+</form>
+{% endblock %}
+

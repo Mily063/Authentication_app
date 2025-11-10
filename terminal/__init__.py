@@ -1,0 +1,2 @@
+# Plik inicjalizujący pakiet terminal
+

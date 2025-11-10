@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Generuj Przepustkę QR</h2>
+<form method="post">
+  Pracownik:
+  <select name="id_pracownika">
+    {% for p in pracownicy %}
+      <option value="{{ p.id_pracownika }}">{{ p.imie }} {{ p.nazwisko }}</option>
+    {% endfor %}
+  </select><br>
+  Ważność (dni): <input type="number" name="dni" value="30" min="1" required><br>
+  <input type="submit" value="Generuj QR">
+</form>
+{% endblock %}
+

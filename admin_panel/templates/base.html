@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>System Kontroli Dostępu</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>System Kontroli Dostępu</h1>
+    <nav>
+        <a href="/">Strona główna</a> |
+        <a href="/pracownik/dodaj">Dodaj pracownika</a> |
+        <a href="/qr/generuj">Generuj QR</a> |
+        <a href="/raport">Raport</a> |
+        <a href="/raport/niepoprawne">Raport niepoprawne</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
+
