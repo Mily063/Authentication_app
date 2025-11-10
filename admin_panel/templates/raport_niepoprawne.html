@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Raport Niepoprawnych Prób</h2>
+<table border="1">
+<tr><th>Czas</th><th>Kod QR</th><th>ID Pracownika</th><th>Weryfikacja Twarzy</th><th>Wynik</th><th>Czytnik</th></tr>
+{% for e in entries %}
+<tr>
+  <td>{{ e.timestamp }}</td>
+  <td>{{ e.id_kodu_qr_zeskanowany }}</td>
+  <td>{{ e.id_pracownika_zidentyfikowany }}</td>
+  <td>{{ e.wynik_weryfikacji_twarzy }}</td>
+  <td>{{ e.wynik_proby_wejscia }}</td>
+  <td>{{ e.id_czytnika }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+

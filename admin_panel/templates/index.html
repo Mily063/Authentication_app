@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Lista Pracowników</h2>
+<a href="/pracownik/dodaj">Dodaj pracownika</a>
+<table border="1">
+<tr><th>ID</th><th>Imię</th><th>Nazwisko</th><th>Status</th><th>Akcje</th></tr>
+{% for p in pracownicy %}
+<tr>
+  <td>{{ p.id_pracownika }}</td>
+  <td>{{ p.imie }}</td>
+  <td>{{ p.nazwisko }}</td>
+  <td>{{ 'Aktywny' if p.status_uprawnien else 'Zablokowany' }}</td>
+  <td>
+    <a href="/pracownik/edytuj/{{ p.id_pracownika }}">Edytuj</a> |
+    <a href="/pracownik/status/{{ p.id_pracownika }}">Zmień status</a>
+  </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+

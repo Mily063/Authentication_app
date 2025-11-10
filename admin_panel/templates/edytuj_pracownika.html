@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edytuj Pracownika</h2>
+<form method="post">
+  Imię: <input type="text" name="imie" value="{{ pracownik.imie }}" required><br>
+  Nazwisko: <input type="text" name="nazwisko" value="{{ pracownik.nazwisko }}" required><br>
+  <input type="submit" value="Zapisz">
+</form>
+{% endblock %}
+

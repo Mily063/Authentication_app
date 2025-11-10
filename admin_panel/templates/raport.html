@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Raport Wejść</h2>
+<form method="get">
+  Pracownik ID: <input type="text" name="pracownik_id">
+  Wynik próby: <select name="filtr">
+    <option value="">--wszystkie--</option>
+    <option value="Zezwolono">Zezwolono</option>
+    <option value="Odmowa - niezgodność">Odmowa - niezgodność</option>
+    <option value="Odmowa - brak uprawnień">Odmowa - brak uprawnień</option>
+    <option value="Odmowa - kod nieważny">Odmowa - kod nieważny</option>
+  </select>
+  <input type="submit" value="Filtruj">
+</form>
+<table border="1">
+<tr><th>Czas</th><th>Kod QR</th><th>ID Pracownika</th><th>Weryfikacja Twarzy</th><th>Wynik</th><th>Czytnik</th></tr>
+{% for e in entries %}
+<tr>
+  <td>{{ e.timestamp }}</td>
+  <td>{{ e.id_kodu_qr_zeskanowany }}</td>
+  <td>{{ e.id_pracownika_zidentyfikowany }}</td>
+  <td>{{ e.wynik_weryfikacji_twarzy }}</td>
+  <td>{{ e.wynik_proby_wejscia }}</td>
+  <td>{{ e.id_czytnika }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
+

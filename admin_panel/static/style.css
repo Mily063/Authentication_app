@@ -1,0 +1,33 @@
+body { font-family: Arial, sans-serif; margin: 2em; }
+nav a { margin-right: 1em; }
+table { border-collapse: collapse; }
+th, td { padding: 0.5em; border: 1px solid #ccc; }
+.flashes { color: red; }
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administracyjny SKD</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Panel Administracyjny SKD</h1>
+    <nav>
+        <a href="/">Pracownicy</a> |
+        <a href="/qr/generuj">Generuj QR</a> |
+        <a href="/raport">Raporty</a> |
+        <a href="/raport/niepoprawne">Raporty Niepoprawne</a>
+    </nav>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+</html>
+
