@@ -11,4 +11,3 @@ FACE_MATCH_TOLERANCE = 0.6  # odpowiada ok. 90% pewności
 # Inne ustawienia
 READER_ID = 1
 REPORT_RETENTION_MONTHS = 6
-
