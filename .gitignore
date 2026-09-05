@@ -1,0 +1,13 @@
+.idea/
+__pycache__/
+*.pyc
+*.db
+*.sqlite3
+data/face_embeddings/*.npy
+data/face_embeddings/*.png
+data/face_embeddings/*.dat
+models/*.dat
+.env
+venv/
+.venv/
+.DS_Store
